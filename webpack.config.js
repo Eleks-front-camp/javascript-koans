@@ -8,7 +8,8 @@ const SRC = './src';
 module.exports = {
   mode: 'development',
   entry: {
-    app: SRC + '/index.js'
+    app: SRC + '/index.js',
+    test: 'mocha-loader!' + SRC + '/__tests__/index.js'
   },
   devtool: 'inline-source-map',
   devServer: {

@@ -1,5 +1,5 @@
-const testFunction = () => {
-  console.log(`something work ${40 + 2}`);
-};
+import sum  from  './sum';
 
-testFunction();
+export {
+  sum
+};
