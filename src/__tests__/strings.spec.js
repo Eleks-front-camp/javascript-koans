@@ -33,5 +33,22 @@ describe('strings.js', () => {
     it('should return cut string with length equal maxLength and replacementText value in the end', () => {
       expect(strings.truncate(originalString, 9, '@')).to.be.equal('some onc@');
     });
+  });
+
+  describe('parseQuery(string) - parse query string', () => {
+    it('should return object with values from query string', () => {
+      const result = strings.parseQuery('some=value&another=42');
+      expect(result).to.have.property('some', 'value');
+      expect(result).to.have.property('another', '42');
+    });
+    it('should return object with values from query string that starts with `?` character', () => {
+      const result = strings.parseQuery('?some=value&another=42');
+      expect(result).to.have.property('some', 'value');
+      expect(result).to.have.property('another', '42');
+    });
+    it('should return empty object if string is empty', () => {
+      const result = strings.parseQuery('');
+      expect(result).to.be.empty;
+    });
   })
 });

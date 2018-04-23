@@ -31,4 +31,28 @@ function truncate(string, maxLength, replacementText = '...') {
   return string;
 }
 
-export {repeat, ucFirst, truncate};
+
+/**
+ * parse query stryng
+ * @param {string} string - original query string
+ * @return {object} - object with parsed values from string
+ * */
+function parseQuery(string) {
+  let str = string;
+  if (!string) {
+    return {};
+  }
+  if(string.startsWith('?')) {
+    str = string.slice(1);
+  }
+  return str.split('&')
+    .map( el => el.split('=') )
+    .reduce( (pre, cur) => { pre[cur[0]] = cur[1]; return pre; }, {} )
+}
+
+export {
+  repeat,
+  ucFirst,
+  truncate,
+  parseQuery,
+};
