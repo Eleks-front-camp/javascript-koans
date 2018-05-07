@@ -5,10 +5,13 @@
   "author": "Eleks",
   "license": "MIT",
   "scripts": {
-    "start": "yarn webpack-dev-server --open"
+    "start": "yarn webpack-dev-server --open",
+    "test": "yarn mocha --require babel-register ./src/__tests__/**.spec.js"
   },
   "dependencies": {},
   "devDependencies": {
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.19",
     "html-webpack-plugin": "^3.2.0",
