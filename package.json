@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn webpack-dev-server --open",
-    "test": "yarn mocha --require babel-register ./src/__tests__/**.spec.js"
+    "test": "yarn mocha --require babel-register ./src/__tests__/**.spec.js",
+    "docs": "yarn esdoc"
   },
   "dependencies": {},
   "devDependencies": {
@@ -14,6 +15,8 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.19",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mocha": "^5.1.0",
     "mocha-loader": "^1.1.3",
